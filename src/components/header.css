@@ -1,0 +1,49 @@
+.header {
+  width: 100%;
+  min-height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid rgb(224, 224, 224);
+  text-align: center;
+}
+.header-content {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+}
+.header-logo {
+  flex: 1;
+  height: 100%;
+  border: 1px solid yellow;
+}
+.header-center {
+  height: 100%;
+  flex: 4;
+  border: 1px solid green;
+  text-align: left;
+}
+.header-nav {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.header-nav-item {
+  height: 100%;
+  display: block;
+  font-size: 14px;
+}
+.header-nav-item a {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 100%;
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  padding: 0 24px;
+}
+.header-tool {
+  flex: 1;
+  border: 1px solid red;
+}
