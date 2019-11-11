@@ -14,12 +14,12 @@
 .header-logo {
   flex: 1;
   height: 100%;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 .header-center {
   height: 100%;
   flex: 4;
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   text-align: left;
 }
 .header-nav {
@@ -45,5 +45,27 @@
 }
 .header-tool {
   flex: 1;
-  border: 1px solid red;
+  display: flex;
+  /*border: 1px solid red;*/
+  font-size: 1.06rem;
+}
+.header-tool-btn {
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.header-tool-btn i {
+  font-size: 20px;
+}
+.header-tool-btn i:hover {
+  font-weight: bold;
+}
+.header-tool-my {
+  width: 24px;
+  height: 24px;
+}
+.header-tool-my img {
+  width: 100%;
+  height: 100%;
 }

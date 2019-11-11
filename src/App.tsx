@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header'
+import Header from './components/header/header'
 
 const App: React.FC = () => {
   return (
@@ -8,8 +8,5 @@ const App: React.FC = () => {
       <Header />
     </div>
   );
-}
-function Home() {
-  return <h2>Home</h2>;
 }
 export default App;
