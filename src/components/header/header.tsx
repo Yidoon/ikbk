@@ -16,6 +16,35 @@ function HeaderNav () {
     </ul>
   )
 }
+function FormBtn () {
+  return (
+    <div className="btn-wrap">
+      <button className="header-tool-btn form-btn cancle">取消</button>
+      <button className="header-tool-btn form-btn confirm">确定</button>
+    </div>
+  );
+}
+interface toolNavProps {
+  userDefaultPng: any,
+  onSearchClick: Function
+}
+function ToolNav ({userDefaultPng, onSearchClick}: toolNavProps) {
+  return (
+    <div className="btn-wrap">
+      <button className="header-tool-btn" onClick={() => onSearchClick()}>
+        <i className="iconfont icon-sousuo"></i>
+      </button>
+      <button className="header-tool-btn">
+        <i className="iconfont icon-icon-test"></i>
+      </button>
+      <button className="header-tool-btn">
+        <div className="header-tool-my">
+          <img src={userDefaultPng} alt=""/>
+        </div>
+      </button>
+    </div>
+  )
+}
 interface Props {
   name?: string;
   enthusiasmLevel?: number;
@@ -29,12 +58,21 @@ class Header extends React.Component<Props, State>{
     super(props);
     this.state = {
       currentEnthusiasm: props.enthusiasmLevel || 1,
-      isUserInput: false
+      isUserInput: true
     }
   }
+  onSearchClick = () => {
+    this.setState({
+      isUserInput: true
+    })
+  };
   render () {
     let isUserInput = this.state.isUserInput;
-    const v = isUserInput ?  <Input /> : <HeaderNav />;
+    const v = isUserInput ? <Input /> : <HeaderNav />;
+    const p = isUserInput ? <FormBtn /> : <ToolNav
+                                            userDefaultPng={userDefaultPng}
+                                            onSearchClick={this.onSearchClick.bind(this)}
+                                          />
     return (
       <div className="header">
         <div className="header-content">
@@ -45,17 +83,7 @@ class Header extends React.Component<Props, State>{
             {v}
           </div>
           <div className="header-tool">
-            <button className="header-tool-btn">
-              <i className="iconfont icon-sousuo"></i>
-            </button>
-            <button className="header-tool-btn">
-              <i className="iconfont icon-icon-test"></i>
-            </button>
-            <button className="header-tool-btn">
-              <div className="header-tool-my">
-                <img src={userDefaultPng} alt=""/>
-              </div>
-            </button>
+            {p}
           </div>
         </div>
       </div>

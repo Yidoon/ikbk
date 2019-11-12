@@ -69,3 +69,20 @@
   width: 100%;
   height: 100%;
 }
+.btn-wrap {
+  width: 100%;
+  text-align: right;
+}
+.form-btn {
+  height: 36px;
+  width: 70px;
+  border: 1px solid red;
+  color: rgb(51, 51, 51);
+  background: #fff;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 4px;
+}
+.confirm {
+  background: rgb(30, 171, 249);
+  color: #fff;
+}
