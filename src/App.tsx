@@ -7,7 +7,6 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
       <div className="main-content">
-
       </div>
     </div>
   );
