@@ -2,15 +2,86 @@ import React from 'react';
 import './App.less';
 import Header from './components/header/header';
 import LeftNav from './components/leftmenu/leftmenu';
+import MainList from './components/mainlist/mainlist';
+import { any } from 'prop-types';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <Header />
-      <div className="main-content">
-        <LeftNav />
-      </div>
-    </div>
-  );
+interface Prop {
+
 }
+interface State {
+  menu_list: any,
+  selectedMeunId: number
+}
+
+class App extends React.Component<Prop, State> {
+  constructor(props: Prop) {
+    super(props);
+    this.state = {
+      menu_list: [
+        {
+          id: 1,
+          menu_name: '我的列表',
+          icon: '',
+          link_url: '',
+
+        },
+        {
+          id: 2,
+          menu_name: '我的收藏',
+          icon: '',
+          link_url: ''
+        },
+        {
+          id: 3,
+          menu_name: '前端文章',
+          icon: '',
+          link_url: ''
+        },
+        {
+          id: 4,
+          menu_name: 'GIT相关',
+          icon: '',
+          link_url: ''
+        },
+        {
+          id: 5,
+          menu_name: '其他',
+          icon: '',
+          link_url: ''
+        }
+      ],
+      selectedMeunId: 1
+    }
+  };
+  changeSelectedMenu = (id: number) => {
+    this.setState({
+      selectedMeunId: id
+    })
+  };
+  getTitleOfSelectedMenu = () => {
+    let selectMenuItem = {};
+    this.state.menu_list.forEach((element: any) => {
+      if (element.id === this.state.selectedMeunId) {
+        selectMenuItem = element
+      }
+    });
+    return selectMenuItem;
+  }
+  render () {
+    let selectedMenuItem = this.getTitleOfSelectedMenu();
+    return (
+      <div className="App">
+        <Header />
+        <div className="main-content">
+          <LeftNav 
+            menu_list={this.state.menu_list}
+            changeSelectedMenu={this.changeSelectedMenu}
+          />
+          <MainList selectedMenuItem={selectedMenuItem}/>
+        </div>
+      </div>
+    )
+  }
+}
+
 export default App;
