@@ -53,12 +53,17 @@ class App extends React.Component<Prop, State> {
       selectedMeunId: 1
     }
   };
+  /**
+   * @description: 点击左侧菜单触发的函数
+   * @param {number} 点击的菜单的id 
+   * @return: {object} 菜单项
+   */
   changeSelectedMenu = (id: number) => {
     this.setState({
       selectedMeunId: id
     })
   };
-  getTitleOfSelectedMenu = () => {
+  getMenuItem = () => {
     let selectMenuItem = {};
     this.state.menu_list.forEach((element: any) => {
       if (element.id === this.state.selectedMeunId) {
@@ -68,7 +73,7 @@ class App extends React.Component<Prop, State> {
     return selectMenuItem;
   }
   render () {
-    let selectedMenuItem = this.getTitleOfSelectedMenu();
+    let selectedMenuItem = this.getMenuItem();
     return (
       <div className="App">
         <Header />
