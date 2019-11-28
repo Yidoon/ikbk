@@ -3,7 +3,6 @@ import './App.less';
 import Header from './components/header/header';
 import LeftNav from './components/leftmenu/leftmenu';
 import MainList from './components/mainlist/mainlist';
-import { any } from 'prop-types';
 
 interface Prop {
 
