@@ -58,7 +58,7 @@ class MainList extends React.Component<Prop, State> {
   render() {
     let articleList = this.state.article_list;
     return (
-      <div className={`main-list`}>
+      <div className="main-list">
         <div className={`main-selected-title`}>
           {this.props.selectedMenuItem.menu_name}
         </div>
@@ -78,12 +78,9 @@ class MainList extends React.Component<Prop, State> {
                 </div>
                 <div className="item-tool-wrap">
                   <div className="item-tool">
-                    {}
-                    <i className="iconfont icon-shenglvehao" onClick={() => {this.clickItemTool(item)}}></i>
-                    <div className="item-toolbar">
-                      <i className="iconfont icon-shanchu2 icon-gray" onClick={() => {this.clickItemTool(item)}}></i>
-                      <i className="iconfont icon-fenxiang icon-gray" onClick={() => {this.clickItemTool(item)}}></i>
-                    </div>
+                    <i className="iconfont icon-shenglvehao set-icon" onClick={() => {this.clickItemTool(item)}}></i>
+                    <i className="iconfont icon-shanchu2 icon-gray tool-icon" onClick={() => {this.clickItemTool(item)}}></i>
+                    <i className="iconfont icon-fenxiang icon-gray tool-icon" onClick={() => {this.clickItemTool(item)}}></i>
                   </div>
                 </div>
               </div>
