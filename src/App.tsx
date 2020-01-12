@@ -1,8 +1,10 @@
 import React from 'react';
-import './App.less';
 import Header from './components/header/header';
 import LeftNav from './components/leftmenu/leftmenu';
 import MainList from './components/mainlist/mainlist';
+import Home from './pages/home/home';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
 
 interface Prop {
 
@@ -74,16 +76,30 @@ class App extends React.Component<Prop, State> {
   render () {
     let selectedMenuItem = this.getMenuItem();
     return (
-      <div className="App">
-        <Header />
-        <div className="main-content">
-          <LeftNav 
-            menu_list={this.state.menu_list}
-            changeSelectedMenu={this.changeSelectedMenu}
-          />
-          <MainList selectedMenuItem={selectedMenuItem}/>
-        </div>
-      </div>
+        <Router>
+          <div className="App">
+            <Route exact path="/login">
+              login
+            </Route>
+            <Route exact path="/">
+              home
+            </Route>
+            <LeftNav
+              menu_list={this.state.menu_list}
+              changeSelectedMenu={this.changeSelectedMenu}>
+            </LeftNav>
+          </div>
+        </Router>
+      // <div className="App">
+      //   <Header />
+      //   <div className="main-content">
+      //     <LeftNav
+      //       menu_list={this.state.menu_list}
+      //       changeSelectedMenu={this.changeSelectedMenu}
+      //     />
+      //     <MainList selectedMenuItem={selectedMenuItem}/>
+      //   </div>
+      // </div>
     )
   }
 }
