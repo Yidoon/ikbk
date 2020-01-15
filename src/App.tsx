@@ -3,9 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.less';
 
 import Home from "@pages/home/home";
-import Header from "@comps/layout/header/header";
-import Sider from "@comps/layout/sider/sider";
-import Content from "@comps/layout/content/content";
+import Login from "@pages/login/login";
 
 interface Prop {
 
@@ -23,7 +21,7 @@ class App extends React.Component<Prop, State> {
         <Router>
           <div className="App">
             <Route exact path="/login">
-              login
+              <Login></Login>
             </Route>
             <Route exact path="/">
               <Home></Home>
