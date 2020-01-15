@@ -7,17 +7,17 @@ interface State {
 
 }
 
-class Left extends React.Component<Prop, State>{
+class Sider extends React.Component<Prop, State>{
   constructor(props: Prop) {
     super(props);
   }
   render() {
     return (
-      <div className="Left">
+      <div className="Sider">
         Left
       </div>
     )
   }
 }
 
-export default Left;
+export default Sider;

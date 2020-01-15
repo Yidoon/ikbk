@@ -7,17 +7,17 @@ interface State {
 
 }
 
-class Main extends React.Component<Prop, State>{
+class Content extends React.Component<Prop, State>{
   constructor(props: Prop) {
     super(props)
   }
   render() {
     return(
       <div>
-        Main
+        Content
       </div>
     )
   }
 }
 
-export default Main;
+export default Content;

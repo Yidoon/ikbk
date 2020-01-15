@@ -1,5 +1,8 @@
 import React from 'react';
-
+import AppLayout from "@comps/layout/appLayout/appLayout";
+import Header from "@comps/layout/header/header";
+import Sider from "@comps/layout/sider/sider";
+import Content from "@comps/layout/content/content";
 interface Prop {
 
 }
@@ -10,9 +13,15 @@ class Home extends React.Component<Prop, State>{
     constructor(props: Prop) {
         super(props);
     };
-    render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
+    render() {
         return(
-            <div className="Home"></div>
+            <div className="Home">
+                <AppLayout>
+                  <Header></Header>
+                  <Sider></Sider>
+                  <Content></Content>
+                </AppLayout>
+            </div>
         );
     };
 }
